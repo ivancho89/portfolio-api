@@ -1,0 +1,19 @@
+
+service: portfolio
+
+plugins:
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs12.x
+  memorySize: 128
+  timeout: 60
+  region: us-east-2
+functions:
+  app:
+    handler: server.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true

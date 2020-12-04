@@ -1,0 +1,14 @@
+.DS_Store
+.env
+
+node_modules/
+dist/
+yarn-error.log
+coverage/*
+dump.rdb
+
+public/*
+amplify/*
+src/*
+
+*.pem

@@ -1,0 +1,74 @@
+{
+  "name": "portfolio-api",
+  "version": "1.0.0",
+  "description": "Portfolio API",
+  "main": "server.js",
+  "author": "Ivan David Gonzalez",
+  "license": "-",
+  "private": true,
+  "scripts": {
+    "s": "nodemon server.js",
+    "prettier-lint": "node_modules/.bin/prettier --write \"app/modules/**/*.js\" && prettier --write \"app/modules/**/**/*.js\"",
+    "prettier-init": "node_modules/.bin/prettier --write \"app/init/**/*.js\"",
+    "prettier-lib": "node_modules/.bin/prettier --write \"lib/*.js\" && prettier --write \"lib/**/*.js\" && prettier --write \"lib/**/**/*.js\" ",
+    "prettier-lint-all": "yarn prettier-lint yarn prettier-init yarn prettier-lib",
+    "lint": "eslint --fix \"app/modules/**/*.js\" && eslint --fix \"app/modules/**/**/*.js\"",
+    "docs": "apidoc -i app/ -o public/apidoc/",
+    "test": "mocha ./app/modules/**/**/*.test.js --exit"
+  },
+  "dependencies": {
+    "apidoc": "^0.18.0",
+    "async": "^3.1.0",
+    "aws-sdk": "^2.799.0",
+    "body-parser": "^1.18.2",
+    "chai": "^4.2.0",
+    "config": "^3.0.1",
+    "cors": "^2.8.4",
+    "dotenv": "^8.2.0",
+    "es6-promise": "^4.1.1",
+    "express": "^4.16.2",
+    "express-device": "^0.4.2",
+    "express-validator": "^5.3.0",
+    "http-status-codes": "^1.4.0",
+    "husky": "^4.2.5",
+    "i18n": "^0.8.4",
+    "joi": "^14.3.1",
+    "mocked-env": "^1.3.2",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.23",
+    "serverless-http": "^2.6.0",
+    "twitter": "^1.7.1",
+    "uuid": "^8.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^4.0.2",
+    "gulp-apidoc": "^0.2.8",
+    "mocha": "^8.0.1",
+    "nodemon": "^1.18.6",
+    "prettier": "^1.14.2",
+    "serverless-offline": "^6.8.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "tests/**/*",
+      "node_modules/**/*"
+    ],
+    "events": {}
+  },
+  "apidoc": {
+    "name": "Serverless Node.js API",
+    "version": "1.0",
+    "description": "Serverless Node.js API",
+    "title": "Serverless Node.js API"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn prettier-lint-all",
+      "post-commit": "git commit -am 'prettier/lint' "
+    }
+  }
+}

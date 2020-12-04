@@ -1,0 +1,8 @@
+{
+	"something_went_wrong":"Parece que algo salió mal con la solicitud, intente nuevamente más tarde.",
+	"login_required": "Por favor ingrese nuevamente",
+	"internal_server_error": "Se produjo un problema al ejecutar la solicitud. Vuelve a intentarlo más tarde.",
+	"validator_missing_fields": "Algunos campos son incorrectos o hacen falta en {{ type }} : {{extra}} ",
+	"general_server_error":"Hubo un problema interno. Vuelve a intentarlo más tarde.",
+	"not_found_page": "Pagina no encontrada"
+}
